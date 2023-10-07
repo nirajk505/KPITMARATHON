@@ -3,80 +3,33 @@
 int main()
 {
     ToursitVehicle* arr[3];
+    //Creating object
     CreateObject(arr);
 
         for(int i=0;i<3;i++)
         {
             std::cout<<"Details is :"<<*arr[i]<<std::endl;
         }
-        // TouristVehicle* res[SIZE] = {};
-        // FindTouristVehicle(arr, res);
+    //Average booking charge cost
 
-        ToursitVehicle* res[3]={};
+    int result=TouristWithCAB(arr,Type::CAB);
+     std::cout<<result<<"endl";
 
-       
-
-    std::cout<<"Average booking charge is :"<<averageBookingCharge(arr);
+    int avg=averageBookingCharge(arr);
+    std::cout<<avg/result;
      
-
+   ToursitVehicle* res[3]={};
     seatCount(arr,res);
-     std::cout<<"kdhfkahd";
 
     for(int i=0;i<3;i++)
     {
         std::cout<<*res[i];
     }
-
+    
+    //max booking charge
     std::cout<<"max booking charge is:"<<*(maxbookingCharge(arr));
-
+    //Function to free the memory
     FreeMemory(arr);
     
 
 }
-
-
-
-
-
-
-
-    /*
-     TouristVehicle* arr[SIZE] = {};
-    
-    try{
-        CreateObjects(arr);
-
-        TouristVehicle* res[SIZE] = {};
-        FindTouristVehicle(arr, res);
-
-         std::cout << "Result : \n";
-        for(int i = 0; i < SIZE; i++){
-
-            if(res[i] == nullptr){
-                break;
-            }
-            std::cout << *res[i] <<"\n";
-
-        }
-
-        for(int i = 0; i < SIZE; i++){
-            delete res[i];
-        }
-
-        std::cout << "Average Booking Charge : " << AverageBookingCharge(arr) << "\n";
-
-        std::cout << "Maximum Charge Tourist Vehicle : " << 
-            *(MaximumChargeTouristVehicle(arr)) << "\n";
-
-    }catch(std::runtime_error& ex){
-        std::cout<< ex.what() << "\n";
-    }
-
-    
-
-
-    FreeMemory(arr);
-}
-    */
-
-    
